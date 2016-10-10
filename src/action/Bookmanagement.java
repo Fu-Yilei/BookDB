@@ -89,7 +89,6 @@ public class Bookmanagement extends ActionSupport{
 	
 	public String DeleteBook() {
 		Operations.deleteBook(ISBN);
-		System.out.println(ISBN);
 		return SUCCESS;
 	}
 	
