@@ -21,7 +21,8 @@ public class Operations{
 		}
 		try {
 			con = DriverManager.getConnection(
-							"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+//							"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+			"jdbc:mysql://bnyyyspcjlyj.rds.sae.sina.com.cn:10414/bookdb","root","fuyilei96");
 			String sql = "select * from Author where Name = '" + AuthorInfo + "'";
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -58,7 +59,8 @@ public class Operations{
 		}
 		try {
 			con = DriverManager.getConnection(
-							"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+//					"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+							"jdbc:mysql://bnyyyspcjlyj.rds.sae.sina.com.cn:10414/bookdb","root","fuyilei96");
 			String sql = "delete from book where ISBN ='" + ISBN +"' ";
 			Statement st = (Statement) con.createStatement();
 			st.executeUpdate(sql);
@@ -66,6 +68,7 @@ public class Operations{
 			e.printStackTrace();
 		} finally {
 			try {
+	//			if(st!= null) st.close();
 				if(rs != null) rs.close();
 				if(con != null) con.close();
 			} catch (SQLException e) {
@@ -90,7 +93,8 @@ public class Operations{
 		}
 		try {
 			con = DriverManager.getConnection(
-			          "jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+//					"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+			         "jdbc:mysql://bnyyyspcjlyj.rds.sae.sina.com.cn:10414/bookdb","root","fuyilei96");
 				sql = "select * from book where Title ='" + Tlt + "'";
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -133,7 +137,8 @@ public class Operations{
 		}
 		try {
 			con = DriverManager.getConnection(
-			          "jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+//					"jdbc:mysql://localhost:3306/BookDB","root","fuyilei@96");
+			         "jdbc:mysql://bnyyyspcjlyj.rds.sae.sina.com.cn:10414/bookdb","root","fuyilei96");
 				sql = "select * from author where Name Like'" + AuthorName + "'";
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
