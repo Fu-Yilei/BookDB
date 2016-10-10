@@ -4,13 +4,26 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<package name="default" extends ="struts-default">
-    	<action name="HelloWorld" class="tutorial.HelloWorld">
-    		<result>/HelloWorld.jsp</result>
-    	</action>
-		<action name="add" class="tutorial.HelloWorld" method="addition">
-    		<result name="!!!">/250.jsp</result>
-    		<result>/result.jsp</result>
-    	</action>
+	<!--  constant name="struts.enable.SlashesInActionNames" value="true"/-->
+	<!--  constant name="struts.configuration.xml.reload" value="true" /-->
+	<package name="default" extends ="struts-default">
+
+		<!-- 显示书 -->
+		<action name = "listbooks" class = "action.Bookmanagement" method = "ListBooks">
+			<result>/BookView.jsp</result>
+		</action>
+		<!-- 删除书 -->
+		<action name = "delete" class = "action.Bookmanagement" method = "DeleteBook">
+			<result>/Success.jsp</result>
+		</action>
+		
+		<action name = "searchbooks" class = "action.Bookmanagement" method = "SearchBooks">
+			<result>/BookView.jsp</result>
+		</action>
+		<!-- 显示细节-->
+		<action name = "details" class = "action.Bookmanagement" method = "ShowDetails">
+			<result>/BookDetail.jsp</result>
+		</action>
+
 </package>
 </struts>
