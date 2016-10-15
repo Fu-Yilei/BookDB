@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.jdbc.Statement;
-
+/**
+ * 
+ * @author Frank Fu
+ *
+ */
 public class Operations{
 	public static String SearchAuthor(String AuthorInfo) {
 //		List<Author> list = new ArrayList<Author>();
